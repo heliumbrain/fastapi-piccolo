@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "piccolo-fastapi"
+version = "0.1.0"
+description = "An example project showcasing how to integrate Piccolo-ORM with a FastAPI application"
+authors = ["heliumbrain <nils@kanevad.se>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+piccolo = "^0.21.1"
+fastapi = "^0.65.2"
+uvicorn = "^0.14.0"
+Jinja2 = "^3.0.1"
+piccolo-admin = "^0.13.2"
+python-dotenv = "^0.18.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
