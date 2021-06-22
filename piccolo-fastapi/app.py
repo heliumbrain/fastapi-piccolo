@@ -3,13 +3,24 @@ import typing as t
 from fastapi import FastAPI
 from piccolo.apps.user.tables import BaseUser
 from piccolo.engine import engine_finder
+from piccolo_admin.endpoints import create_admin
 from piccolo_api.session_auth.middleware import SessionsAuthBackend
 from piccolo_api.session_auth.tables import SessionsBase
 from product.piccolo_app import APP_CONFIG
 from product.routers import product_router
+from product.tables import Product
 from starlette.middleware.authentication import AuthenticationMiddleware
+from starlette.routing import Mount
+from starlette.staticfiles import StaticFiles
 
-app = FastAPI()
+app = FastAPI(
+    routes=[
+        Mount(
+            "/admin/",
+            create_admin(tables=[Product], site_name="FastAPI + Piccolo - Admin"),
+        ),
+    ],
+)
 
 
 session_auth = (

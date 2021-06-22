@@ -2,8 +2,7 @@ from decimal import Decimal
 
 from piccolo.apps.migrations.auto import MigrationManager
 from piccolo.columns.base import OnDelete, OnUpdate
-from piccolo.columns.column_types import (JSON, ForeignKey, Integer, Numeric,
-                                          Varchar)
+from piccolo.columns.column_types import JSON, ForeignKey, Integer, Numeric, Varchar
 from piccolo.columns.indexes import IndexMethod
 from piccolo.table import Table
 
