@@ -12,8 +12,13 @@ uvicorn = "^0.14.0"
 Jinja2 = "^3.0.1"
 piccolo-admin = "^0.13.2"
 python-dotenv = "^0.18.0"
+pydantic = "^1.8.2"
+piccolo-api = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
+rope = "^0.19.0"
+black = "^21.6b0"
+flake8 = "^3.9.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

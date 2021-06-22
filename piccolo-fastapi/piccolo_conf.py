@@ -1,9 +1,6 @@
-from piccolo.engine.postgres import PostgresEngine
-
-from piccolo.conf.apps import AppRegistry
-
 from config import settings
-
+from piccolo.conf.apps import AppRegistry
+from piccolo.engine.postgres import PostgresEngine
 
 DB = PostgresEngine(
     config={
@@ -16,5 +13,10 @@ DB = PostgresEngine(
 )
 
 APP_REGISTRY = AppRegistry(
-    apps=["home.piccolo_app", "piccolo_admin.piccolo_app"]
+    apps=[
+        "product.piccolo_app",
+        "piccolo_admin.piccolo_app",
+        "piccolo.apps.user.piccolo_app",
+        "piccolo_api.session_auth.piccolo_app",
+    ]
 )
