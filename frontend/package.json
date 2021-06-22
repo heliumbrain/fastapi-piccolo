@@ -1,8 +1,8 @@
 {
-	"name": "~TODO~",
+	"name": "FastAPI & Piccolo - Frontend",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
+		"dev": "svelte-kit dev --host",
 		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
 		"lint": "prettier --check --plugin-search-dir=. .",

@@ -1,0 +1,12 @@
+FROM node:16
+
+# install dependencies
+WORKDIR /usr/src/app
+COPY package.json pnpm-lock.yaml ./
+RUN npm install -g pnpm
+RUN pnpm install
+
+# Copy all local files into the image.
+COPY . .
+
+CMD pnpm dev
