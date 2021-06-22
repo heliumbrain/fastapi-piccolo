@@ -2,17 +2,14 @@
 	import { variables } from '$lib/variables';
 
 	export const load = async ({ fetch }) => {
-		try {
 			const res = await fetch(`${variables.apiPath}/products`);
 			const products = await res.json();
+      console.log(products)
 			return {
 				props: {
 					products
 				}
 			};
-		} catch (error) {
-			console.log(error);
-		}
 	};
 </script>
 
@@ -27,9 +24,7 @@
 			Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 		</p>
 		{#each products as product}
-			<p>{product}</p>
-		{:else}
-			<p>No products to show!</p>
+			<p>{product.name}</p>
 		{/each}
 	</div>
 </main>

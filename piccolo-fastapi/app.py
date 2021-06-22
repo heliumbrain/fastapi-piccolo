@@ -22,6 +22,18 @@ app = FastAPI(
     ],
 )
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # Don't allow all in production, only for testing purposes!
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 session_auth = (
     AuthenticationMiddleware(
